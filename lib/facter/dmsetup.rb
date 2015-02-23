@@ -34,7 +34,7 @@ if Facter::Core::Execution.which('dmsetup')
     ]){ | key, oldval, newval | oldval.merge(newval) }
 
     deps = Facter::Core::Execution.execute('dmsetup deps -o devname')
-    dmsetup_deps = deps.scan(/^([^:]+): [0-9]+ dependencies *: *(\(.*\))$/)
+    dmsetup_deps = deps.scan(/^([^:]+):\s[0-9]+\s*dependencies\s*:\s*(\(.*\))$/)
     dmsetup = dmsetup.merge(Hash[
         dmsetup_deps.map {
             |name, dependencies|
