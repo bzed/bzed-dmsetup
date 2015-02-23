@@ -1,6 +1,6 @@
 {
   "name": "bzed-dmsetup",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Bernd Zeimetz",
   "summary": "Linux dmsetup features for puppet",
   "license": "Apache-2.0",
