@@ -1,0 +1,40 @@
+###########################################
+#
+# MANAGED BY PUPPET - DO NOT TOUCH! 
+#
+#
+###########################################
+
+
+###############################
+# Default settings for logstash
+###############################
+
+# Override Java location
+JAVACMD=/usr/bin/java
+
+# Set a home directory
+LS_HOME=/var/lib/logstash
+
+# Arguments to pass to logstash agent
+LS_OPTS=""
+
+# Arguments to pass to java
+LS_HEAP_SIZE="500m"
+LS_JAVA_OPTS="-Djava.io.tmpdir=/var/lib/logstash"
+
+# user id to be invoked as; for upstart: edit /etc/init/logstash.conf
+LS_USER=logstash
+LS_GROUP=logstash
+
+# logstash logging
+LS_LOG_DIR=/var/log/logstash
+LS_LOG_FILE=/var/log/logstash/logstash.log
+#LS_USE_GC_LOGGING="true"
+
+# logstash configuration directory
+LS_CONF_DIR=/etc/logstash/conf.d
+
+# Nice level
+LS_NICE=0
+

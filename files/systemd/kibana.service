@@ -1,0 +1,16 @@
+[Unit]
+Description=Starts kibana 4
+Requires=elasticsearch.service
+
+
+[Service]
+ExecStart=/srv/kibana/current/bin/kibana
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=kibana
+User=kibana
+Group=kibana
+
+[Install]
+WantedBy=multi-user.target

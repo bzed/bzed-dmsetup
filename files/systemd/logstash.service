@@ -1,0 +1,19 @@
+[Unit]
+Description=Starts and stops a single logstash instance on this system
+Documentation=http://www.elasticsearch.org
+Requires=elasticsearch.service
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/default/logstash
+User=logstash
+Group=logstash
+ExecStart=/opt/logstash/bin/logstash agent -f $LS_CONF_DIR -l $LS_LOG_FILE $LS_OPTS
+LimitNOFILE=65535
+# Shutdown delay in seconds, before process is tried to be killed with KILL (if configured)
+TimeoutStopSec=30
+WorkingDirectory=/opt/logstash
+
+[Install]
+WantedBy=multi-user.target
+
